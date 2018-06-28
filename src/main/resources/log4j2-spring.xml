@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <!--Configure properties here-->
+    </Properties>
+    <Appenders>
+        <!--Configure appenders here-->
+        <Console name="Console-Appender" target="SYSTEM_OUT">
+            <PatternLayout disableAnsi="false">
+                <pattern>
+                    %style{Time=}{cyan}%style{[%d{yyyy-MM-dd HH:mm:ss.SSS}]}{magenta} , %style{LOGGING_LEVEL=}{cyan}%highlight{[%level]}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue} , %style{Thread_Name=}{cyan}[%t] , %style{LOG_INVOCATION_LOCATION=}{cyan}[%l] , %style{Message=}{cyan}[%m %exception] %n
+                </pattern>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+                    <!--%style{Logged_User=}{cyan}[%X{Logged_User}] , -->
+    <Loggers>
+        <!--Configure loggers here-->
+        <Root level="info">
+            <AppenderRef ref="Console-Appender"/>
+        </Root>
+    </Loggers>
+</Configuration>
