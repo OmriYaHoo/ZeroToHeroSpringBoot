@@ -2,18 +2,23 @@ package com.example.demo.github;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
 
 public class RepositoryEvent {
 
+    @ApiModelProperty(notes = "Type of issue")
     @Getter
     private final Type type;
+    @ApiModelProperty(notes = "The creation time of the issue")
     @Getter
     private final LocalDateTime creationTime;
+    @ApiModelProperty(notes = "Who created the issue")
     @Getter
     private final Actor actor;
+    @ApiModelProperty(notes = "The issue")
     @Getter
     private final Issue issue;
 
@@ -53,6 +58,7 @@ public class RepositoryEvent {
         COMMENT_DELETED("comment_deleted"),
         REVIEW_REQUESTED("review_requested");
 
+        @ApiModelProperty(notes = "Issue type")
         private String type;
 
         Type(String type) {

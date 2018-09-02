@@ -30,7 +30,7 @@ public class EventsController {
     }
 
     @ResponseBody
-    @ApiOperation(value = "Get issues list of a GitHub Repository by name", response = Iterable.class)
+    @ApiOperation(value = "Get issues list of a GitHub Repository by name", response = RepositoryEvent.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully retrieved list"),
             @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
