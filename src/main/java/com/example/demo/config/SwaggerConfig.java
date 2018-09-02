@@ -23,6 +23,7 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.ant("/events/{repoName}"))
+//                .paths(PathSelectors.ant("/dashboard"))
                 .build()
                 .apiInfo(metaData());
     }

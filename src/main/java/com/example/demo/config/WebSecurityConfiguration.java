@@ -49,6 +49,5 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**").permitAll()
                 .and().httpBasic();
         http.csrf().disable();
-        http.headers().frameOptions().disable();
     }
 }
