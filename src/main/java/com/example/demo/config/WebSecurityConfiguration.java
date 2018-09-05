@@ -41,6 +41,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         StaticResourceRequest.StaticResourceRequestMatcher staticResourceRequestMatcher;
         http.authorizeRequests()
                 .mvcMatchers("/admin").hasRole("ADMIN")
+                .mvcMatchers("/h2-console").hasRole("ADMIN")
                 .requestMatchers(EndpointRequest.to("info", "health")).permitAll()
                 .requestMatchers(EndpointRequest.toAnyEndpoint()).hasRole("ACTUATOR")
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
@@ -49,5 +50,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**").permitAll()
                 .and().httpBasic();
         http.csrf().disable();
+        // for usage of swagger-ui and H2 console
+        http.headers().frameOptions().disable();
     }
 }
