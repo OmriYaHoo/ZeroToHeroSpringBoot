@@ -56,6 +56,8 @@ public class RepositoryEvent {
         CONVERTED_NOTE_TO_ISSUE("converted_note_to_issue"),
         MOVED_COLUMNS_IN_PROJECT("moved_columns_in_project"),
         COMMENT_DELETED("comment_deleted"),
+        DUPLICATE("marked_as_duplicate"),
+        ADDED("added_to_project"),
         REVIEW_REQUESTED("review_requested");
 
         @ApiModelProperty(notes = "Issue type")

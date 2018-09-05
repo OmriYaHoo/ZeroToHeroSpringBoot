@@ -12,15 +12,17 @@ export default class EventsTable extends Component {
         return (
             <table className="table is-hoverable is-fullwidth">
                 <thead>
-                <th>Actor</th>
-                <th>Action</th>
-                <th>Issue title</th>
-                <th>Time</th>
+                <tr>
+                    <th>Actor</th>
+                    <th>Action</th>
+                    <th>Issue title</th>
+                    <th>Time</th>
+                </tr>
                 </thead>
                 <tbody>
-                {this.props.entry.events.map(event => {
+                {this.props.entry.events.map((event, index) => {
                     return (
-                        <tr>
+                        <tr key={"entry"+index}>
                             <td><a href={event.actor.htmlUrl}>{event.actor.login}</a></td>
                             <td><code>{event.type}</code></td>
                             <td>
